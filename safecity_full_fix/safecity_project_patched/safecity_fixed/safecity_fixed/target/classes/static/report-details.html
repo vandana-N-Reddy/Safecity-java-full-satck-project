@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Report Details</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+
+    <style>
+        /* Dashboard Topbar */
+        .topbar {
+            background: #1b2b5a;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .topbar .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .topbar nav a {
+            margin-left: 18px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: 0.2s;
+        }
+        .topbar nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        #map { height: 320px; margin-top: 20px; border-radius: 8px; }
+    </style>
+</head>
+
+<body>
+
+<!-- ✅ Dashboard Header -->
+<header class="topbar">
+    <div class="logo">SafeCity</div>
+    <nav>
+        <a href="/index.html">Home</a>
+        <a href="/services.html">Services</a>
+        <a href="/reports.html">Reports</a>
+        <a href="/login.html">Login</a>
+        <a href="/register.html">Register</a>
+    </nav>
+</header>
+
+<div class="container" style="padding: 25px;">
+    <h2>Report Details</h2>
+
+    <div id="map"></div>
+
+    <p><b>Crime Type:</b> <span id="crimeType"></span></p>
+    <p><b>Location:</b> <span id="location"></span></p>
+    <p><b>Description:</b> <span id="description"></span></p>
+    <p><b>Status:</b> <span id="status"></span></p>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="js/details.js"></script>
+
+</body>
+</html>

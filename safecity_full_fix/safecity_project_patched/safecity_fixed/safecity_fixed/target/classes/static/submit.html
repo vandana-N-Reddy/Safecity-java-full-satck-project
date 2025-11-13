@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Submit Crime - SafeCity</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+
+    <style>
+        /* Dashboard Header */
+        .topbar {
+            background: #1b2b5a;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .topbar .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .topbar nav a {
+            margin-left: 18px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: 0.2s;
+        }
+        .topbar nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        #map { height: 350px; width: 100%; border-radius: 8px; margin-bottom: 20px; }
+    </style>
+</head>
+
+<body>
+
+<!-- ✅ Dashboard Header -->
+<header class="topbar">
+    <div class="logo">SafeCity</div>
+    <nav>
+        <a href="/index.html">Home</a>
+        <a href="/services.html">Services</a>
+        <a href="/reports.html">Reports</a>
+        <a href="/login.html">Login</a>
+        <a href="/register.html">Register</a>
+    </nav>
+</header>
+
+<div class="container" style="padding: 25px;">
+
+    <h2>Report a Crime</h2>
+
+    <div id="map"></div>
+
+    <input id="reporterName" class="input" placeholder="Your Name">
+    <input id="location" class="input" placeholder="Location Name">
+    <input id="latitude" class="input" placeholder="Latitude">
+    <input id="longitude" class="input" placeholder="Longitude">
+
+    <select id="crimeType" class="input">
+        <option value="Theft">Theft</option>
+        <option value="Assault">Assault</option>
+        <option value="Vandalism">Vandalism</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <textarea id="description" class="input" placeholder="Description"></textarea>
+
+    <button onclick="submitReport()">Submit Report</button>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="js/submit.js"></script>
+
+</body>
+</html>

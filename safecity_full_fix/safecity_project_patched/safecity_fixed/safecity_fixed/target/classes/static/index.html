@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SafeCity - Home</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* Dashboard Header */
+        .topbar {
+            background: #1b2b5a;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .topbar .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .topbar nav a {
+            margin-left: 18px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: 0.2s;
+        }
+        .topbar nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url("https://images.unsplash.com/photo-1529243856184-fd5465488984") center/cover no-repeat;
+            height: 380px;
+            display: flex;
+            align-items: center;
+            padding-left: 40px;
+            color: white;
+        }
+        .hero h1 {
+            font-size: 42px;
+            text-shadow: 0 0 5px black;
+        }
+        .cta-btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #1b4f93;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Extra Content Blocks */
+        .section {
+            padding: 40px 20px;
+        }
+        .mission-box, .info-box {
+            background: #fff;
+            padding: 22px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 40px;
+            background: #1b2b5a;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+
+<!-- ✅ Dashboard Header -->
+<header class="topbar">
+    <div class="logo">SafeCity</div>
+    <nav>
+        <a href="/index.html">Home</a>
+        <a href="/services.html">Services</a>
+        <a href="/reports.html">Reports</a>
+        <a href="/login.html">Login</a>
+        <a href="/register.html">Register</a>
+    </nav>
+</header>
+
+<!-- ✅ Your Original Hero Section (unchanged) -->
+<div class="hero">
+    <div>
+        <h1>Welcome to SafeCity</h1>
+        <p>Your trusted community safety and reporting platform.</p>
+        <a href="register.html" class="cta-btn">Get Started</a>
+    </div>
+</div>
+
+<!-- ✅ Your Original Features Section (unchanged) -->
+<div class="container">
+    <h2>Our Features</h2>
+
+    <div class="services-grid">
+
+        <div class="service-card">
+            <h3>🔍 View Crime Map</h3>
+            <p>Explore incidents across the world.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>📢 Instant Alerts</h3>
+            <p>Receive updates about nearby incidents.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>🛡 Safety Tips</h3>
+            <p>Stay informed and protected.</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- ✅ Added Content Without Changing Yours -->
+
+<div class="section">
+    <h2>Our Mission</h2>
+    <div class="mission-box">
+        <p>
+            SafeCity empowers citizens to report crimes quickly and easily, helping 
+            authorities respond faster and keeping communities safer.
+        </p>
+        <p>
+            By combining real-time mapping, user-generated reports, and admin tools, 
+            SafeCity creates a transparent and secure safety ecosystem.
+        </p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Why SafeCity?</h2>
+    <div class="info-box">
+        <ul>
+            <li>✅ Simple and fast reporting</li>
+            <li>✅ Live global crime map</li>
+            <li>✅ Secure user authentication</li>
+            <li>✅ Admin tools for authorities</li>
+            <li>✅ Community-driven safety improvements</li>
+        </ul>
+    </div>
+</div>
+
+<!-- ✅ Footer -->
+<div class="footer">
+    &copy; 2025 SafeCity | Making cities safer, together.
+</div>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Login - SafeCity</title>
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <style>
+    /* Enhanced top navigation bar */
+    .topbar {
+      background: #1b2b5a;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .topbar .logo {
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .topbar nav a {
+      margin-left: 18px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: 0.2s;
+    }
+
+    .topbar nav a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <!-- ✅ Beautiful Dashboard Style Header -->
+  <header class="topbar">
+    <div class="logo">SafeCity</div>
+
+    <nav>
+      <a href="/index.html">Home</a>
+      <a href="/services.html">Services</a>
+      <a href="/reports.html">Reports</a>
+      <a href="/login.html">Login</a>
+      <a href="/register.html">Register</a>
+    </nav>
+  </header>
+
+
+  <main class="container">
+    <div class="card" style="max-width: 420px; margin: 40px auto;">
+      <h1>Login</h1>
+
+      <input id="email" placeholder="Email">
+      <input id="password" type="password" placeholder="Password">
+
+      <button onclick="login()">Login</button>
+      <p id="msg" style="color:red;"></p>
+    </div>
+  </main>
+
+  <script src="/js/login.js"></script>
+</body>
+</html>

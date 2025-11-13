@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SafeCity - Services</title>
+
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <style>
+    /* Dashboard Header */
+    .topbar {
+      background: #1b2b5a;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .topbar .logo {
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .topbar nav a {
+      margin-left: 18px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: 0.2s;
+    }
+    .topbar nav a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .card { background:#fff; border-radius:10px; padding:16px; box-shadow:0 2px 10px rgba(0,0,0,0.08); }
+    #map { height: 420px; border-radius: 10px; margin-top: 20px; }
+    a.btn { display:inline-block; padding:10px 14px; border-radius:8px; background:#202a44; color:#fff; text-decoration:none; }
+  </style>
+</head>
+
+<body>
+
+<!-- ✅ Dashboard Header -->
+<header class="topbar">
+  <div class="logo">SafeCity</div>
+  <nav>
+    <a href="/index.html">Home</a>
+    <a href="/services.html">Services</a>
+    <a href="/reports.html">Reports</a>
+    <a href="/login.html">Login</a>
+    <a href="/register.html">Register</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h1>Our Services</h1>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Crime Reporting</h2>
+      <p>Submit incidents with location and description.</p>
+      <a class="btn" href="/submit.html">Report Now</a>
+    </div>
+
+    <div class="card">
+      <h2>Live Map</h2>
+      <p>See reports plotted on the world map.</p>
+      <a class="btn" href="#map">View Map</a>
+    </div>
+
+    <div class="card">
+      <h2>Admin Panel</h2>
+      <p>Moderate reports and change statuses.</p>
+      <a class="btn" href="/admin-dashboard.html">Open Admin</a>
+    </div>
+  </div>
+
+  <div id="map"></div>
+</main>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  const map = L.map('map').setView([20, 0], 2);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19}).addTo(map);
+
+  fetch('/api/reports')
+    .then(r => r.json())
+    .then(list => {
+      list.forEach(rep => {
+        if (rep.latitude && rep.longitude) {
+          L.marker([rep.latitude, rep.longitude]).addTo(map)
+            .bindPopup(`<b>${rep.crimeType || 'Crime'}</b><br>${rep.location || ''}<br>Status: ${rep.status || ''}`);
+        }
+      });
+    });
+</script>
+
+</body>
+</html>
